@@ -17,10 +17,11 @@ only considering ed's with IN PLAY in column O
 
 tally = dict()
 
-PROG = ["Jumaane Williams"]
-EST = ["Kathy C. Hochul"]
-candidates = ["Kathy C. Hochul", "Jumaane Williams"]
-with open('./raw/201809-LtGovNYC.csv', newline='') as csvfile:
+
+PROG = ["Alexandria Ocasio-Cortez"]
+EST = ["Samuel H. Sloan", "Badrun N. Khan", "Michelle Caruso-Cabrera"]
+candidates = PROG + EST
+with open('./raw/2020/CSV/CD14 - Crossover Democratic Representative in Congress 14th Congressional District EDLevel.csv', newline='') as csvfile:
   reader = csv.reader(csvfile)  
   for row in reader:
     # print(row[11], row[12], row[14], row[20], row[21])
@@ -48,7 +49,7 @@ for ed in tally.keys():
   tally[ed]["share"] = vote_share
 
 
-with open("./output-csv/201809-LtGovNYC.csv", 'w', newline='') as outcsv:
+with open("./output-csv/202005-CD14.csv", 'w', newline='') as outcsv:
   hwrite = csv.writer(outcsv)
   header = ['ed'] + candidates + ["total", "share"]
   hwrite.writerow(header)
