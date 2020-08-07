@@ -5,11 +5,12 @@ import ReactMapboxGl, { Layer, Feature, Popup } from 'react-mapbox-gl';
 const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoicmFwaWNvbGxjIiwiYSI6ImNrOXRhc3ZrMzFlNHgzZG8xZDk3NGJrdnQifQ.stg6zjtXFfOtExoAow_sxA'
 });
-const MAPBOX_STYLE = "mapbox://styles/rapicollc/ckddf4rz63ko71io2eg85v28b"
+// const MAPBOX_STYLE = "mapbox://styles/rapicollc/ckddf4rz63ko71io2eg85v28b"
+const MAPBOX_STYLE = "mapbox://styles/rapicollc/ckdkaddzd0wtq1ipcyxfzw5ek";
 
 const ED_SOURCE = "ed-4rtct9";
 
-const HIDDEN = ["lngLat", "elect_dist", "shape_area", "shape_leng", "share_real", "total_int"]
+const HIDDEN = ["lngLat", "elect_dist", "shape_area", "shape_leng", "share_real", "share_perc", "total_int", "share", "total"]
 
 class MapContainer extends React.Component {
 
@@ -29,7 +30,7 @@ class MapContainer extends React.Component {
   }
 
   onMouseMove = (map, event) => {
-    const target = map.queryRenderedFeatures(event.point, {layers: ['201809-ltgov']})
+    const target = map.queryRenderedFeatures(event.point, {layers: ['202005-cd14']})
     this.setState({ popupLnglat: event.lngLat });
     if (target[0]) {
       this.setState({ popupData: {...target[0].properties } })
