@@ -18,10 +18,10 @@ only considering ed's with IN PLAY in column O
 tally = dict()
 
 
-PROG = ["Alexandria Ocasio-Cortez"]
-EST = ["Samuel H. Sloan", "Badrun N. Khan", "Michelle Caruso-Cabrera"]
+PROG = ["Melanie D'Arrigo", "Michael Weinstock", "Shaniyat Chowdhury", "Melquiades R. Gagarin", "Sandra Choi", "Paperboy Love Prince", "Adem Bunkeddeko", "Chaim M. Deutsch", "Isiah James", "Lutchi Gayot", "Jonathan Herzog", "Lindsey Boylan", "Lauren Ashcraft", "Peter Harrison", "Suraj Patel", "James Felton Keith II", "Ramon Rodriguez", "Badrun N. Khan", "Michelle Caruso-Cabrera", "Samuel H. Sloan", "Andom Ghebreghiorgis", "Christopher Fink", "Eliot L. Engel", "Jamaal Bowman", "Sammy Ravelo"]
+EST = ["Thomas R. Suozzi", "Gregory W. Meeks", "Grace Meng", "Nydia M. Velazquez", "Yvette D. Clarke", "Jerrold L. Nadler", "Carolyn B. Maloney", "Adriano Espaillat", "Alexandria Ocasio-Cortez", "Eliot L. Engel"]
 candidates = PROG + EST
-with open('./raw/2020/CSV/CD14 - Crossover Democratic Representative in Congress 14th Congressional District EDLevel.csv', newline='') as csvfile:
+with open('./raw/2020/CURATED/2020-incumbent.csv', newline='') as csvfile:
   reader = csv.reader(csvfile)  
   for row in reader:
     # print(row[11], row[12], row[14], row[20], row[21])
