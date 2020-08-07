@@ -6,7 +6,7 @@ const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoicmFwaWNvbGxjIiwiYSI6ImNrOXRhc3ZrMzFlNHgzZG8xZDk3NGJrdnQifQ.stg6zjtXFfOtExoAow_sxA'
 });
 // const MAPBOX_STYLE = "mapbox://styles/rapicollc/ckddf4rz63ko71io2eg85v28b"
-const MAPBOX_STYLE = "mapbox://styles/rapicollc/ckdkaddzd0wtq1ipcyxfzw5ek";
+const MAPBOX_STYLE = "mapbox://styles/rapicollc/ckdkaddzd0wtq1ipcyxfzw5ek?fresh=true";
 
 const ED_SOURCE = "ed-4rtct9";
 
