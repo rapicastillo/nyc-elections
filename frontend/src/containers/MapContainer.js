@@ -222,7 +222,7 @@ class MapContainer extends React.Component {
                 paint={{'line-color': '#044776', 'line-opacity': 0.3, 'line-width': 2 }} />
               <Layer 
                 type='symbol' 
-                paint={{ 'text-color': '#044776' }}
+                paint={{ 'text-color': 'brown' }}
                 layout={{'text-size': 12, 'text-field': ['get', DROPDOWN_CHOICE[this.state.showDistrict].text]}} 
                 sourceId={DROPDOWN_CHOICE[this.state.showDistrict].id}
                 sourceLayer={DROPDOWN_CHOICE[this.state.showDistrict].layer}
