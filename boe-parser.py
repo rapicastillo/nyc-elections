@@ -38,9 +38,9 @@ with open('./raw/2020/CURATED/2020-incumbent.csv', newline='') as csvfile:
       tally[election_district][candidate] = count
 
 for ed in tally.keys():
-  print([int(tally[ed][prog]) for prog in PROG])
-  progressives = sum([int(tally[ed][prog]) for prog in PROG])
-  others = sum([int(tally[ed][est]) for est in EST])
+  # print([int(tally[ed][prog]) for prog in PROG])
+  progressives = sum([int(0 if prog not in tally[ed] else tally[ed][prog]) for prog in PROG])
+  others = sum([int(0 if est not in tally[ed] else tally[ed][est]) for est in EST])
 
   total = progressives + others
   vote_share = float(progressives)/total if total > 0 else 0

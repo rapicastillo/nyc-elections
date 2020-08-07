@@ -51,14 +51,22 @@ class MapContainer extends React.Component {
       showDistrict: false
     };
   }
-
+  //#2020-incumbents-1ctjgy
   componentDidMount = () => {
-  
+  /*
+  #762a83
+#9970ab
+#c2a5cf
+#e7d4e8
+#d9f0d3
+#a6dba0
+#5aae61
+#1b783 */
   }
 
   onMouseMove = (map, event) => {
     // const target = map.queryRenderedFeatures(event.point, {layers: ['202005-cd14']})
-    const target = map.queryRenderedFeatures(event.point, {layers: ['201809-ltgov']})
+    const target = map.queryRenderedFeatures(event.point, {layers: ['2020-incumbents']})
     
     this.setState({ popupLnglat: event.lngLat });
     if (target[0]) {
@@ -69,7 +77,7 @@ class MapContainer extends React.Component {
   };
 
   onLoad = (map, event) => {
-
+    
     map.addSource("election-districts", {
       type: "vector",
       url: "mapbox://rapicollc.8yrrl6oa"
@@ -151,7 +159,7 @@ class MapContainer extends React.Component {
 
   render = () => (
     <>
-      <div>
+      <div style={{ position: 'absolute', top: 10, left: 10, zIndex: 10}}>
         <select onChange={ e => { 
             const value= e.target.value;
             this.setState({
@@ -191,7 +199,7 @@ class MapContainer extends React.Component {
                 <tbody>
                 {
                   Object.keys(this.state.popupData).map((item) => 
-                    !HIDDEN.includes(item) && (
+                    !HIDDEN.includes(item) && this.state.popupData[item] && (
                     <tr key={item}>
                       <td>{item}</td><td>{this.state.popupData[item]}</td>
                     </tr>
