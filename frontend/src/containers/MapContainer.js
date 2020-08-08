@@ -66,7 +66,7 @@ class MapContainer extends React.Component {
 
   onMouseMove = (map, event) => {
     // const target = map.queryRenderedFeatures(event.point, {layers: ['202005-cd14']})
-    const target = map.queryRenderedFeatures(event.point, {layers: ['2020-assembly-win']})
+    const target = map.queryRenderedFeatures(event.point, {layers: ['2020-incumbents']})
     
     this.setState({ popupLnglat: event.lngLat });
     if (target[0]) {
